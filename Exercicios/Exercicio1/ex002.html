@@ -6,24 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Object Model</title>
     <style>
+        /*
         body{
             background-color: rgb(102, 102, 245);
             color: white;
             font-family: Arial, san;
+        }*/
+        div#area{
+            background-color: brown;
+            color: white;
+            font-family: Arial, sans-serif;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Iniciando estudos com DOM</h1>
+    <!--<h1>Iniciando estudos com DOM</h1>
     <p>Aqui vai o resultado</p>
     <div id="msg">Clique em mim</div>
     <p>Aprendendo a usar DOM em JS</p>
+    -->
+
+    <div id="area" onclick="clicar()" onmouseenter="entrou()" onmouseout="saiu()">Interaja...</div>
     <script>   
-        var p1 = window.document.getElementsByTagName('p')[0];
+        /*var p1 = window.document.getElementsByTagName('p')[0];
         p1.style.color= 'blue'; 
         window.document.write("O que está escrito no primeiro elemento com a tag p é: " + p1.innerText);
         var d = window.document.querySelector('div#msg'); // Aqui fica bem mais fácil de buscar um dado do que usando o getByElement
         d.style.color = 'blue';
+        */
+        var a = window.document.getElementById('area');
+       function clicar(){
+            a.innerText = 'Clicou!';
+            a.style.backgroundColor = 'blue';
+       }
+       function entrou(){
+            a.innerText = 'Entrou!';
+            a.style.backgroundColor = 'purple';
+       }
+       function saiu(){
+            a.innerText = 'Saiu!';
+            a.style.backgroundColor = 'green';
+       }
+
     </script>
 </body>
 </html>
