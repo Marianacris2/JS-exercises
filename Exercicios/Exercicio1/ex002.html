@@ -30,7 +30,8 @@
     <p>Aprendendo a usar DOM em JS</p>
     -->
 
-    <div id="area" onclick="clicar()" onmouseenter="entrou()" onmouseout="saiu()">Interaja...</div>
+    <div id="area">Interaja...</div>
+    
     <script>   
         /*var p1 = window.document.getElementsByTagName('p')[0];
         p1.style.color= 'blue'; 
@@ -39,15 +40,19 @@
         d.style.color = 'blue';
         */
         var a = window.document.getElementById('area');
+        a.addEventListener('click', clicar);
+        a.addEventListener('mouseenter', entrar);
+        a.addEventListener('mouseout', sair);
+
        function clicar(){
             a.innerText = 'Clicou!';
             a.style.backgroundColor = 'blue';
        }
-       function entrou(){
+       function entrar(){
             a.innerText = 'Entrou!';
             a.style.backgroundColor = 'purple';
        }
-       function saiu(){
+       function sair(){
             a.innerText = 'Saiu!';
             a.style.backgroundColor = 'green';
        }
