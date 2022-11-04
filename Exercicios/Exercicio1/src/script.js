@@ -18,3 +18,21 @@ function carregar(){
     }
 }
 
+function verificar(){
+    var anoNasc = 2011//window.document.getElementsByName('anoNasc');
+    var fem = window.document.getElementById('fem');
+    var masc = window.document.getElementById('masc');
+    var res = window.document.getElementById('res');
+    var msg = window.document.getElementById('msg');
+     
+    if(anoNasc > 2010){
+        img.src = "../imgs/bebe.jpg"
+        msg.innerHTML = 'Você é criança';
+    }else if(anoNasc > 1980 && anoNasc < 2008){
+        img.src = "../imgs/menina.jpg"
+        msg.innerHTML = 'Você é jovem!';
+    }else{
+        img.src = "../imgs/idosa.jpg"
+        msg.innerHTML = 'Você é Idosa!';
+    }
+}
