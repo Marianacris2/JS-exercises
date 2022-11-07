@@ -13,15 +13,17 @@
     </header>
 
     <section>
-        <p>Ano de nascimento: <input type="number" name="anoNasc"></p>
-        <p> Sexo: <label for="masc"><input type="radio" id="masc">Masculino </label>
-                  <label for="fem"><input type="radio" id="fem" checked>Feminino</label>
-        </p>
-        <p><input type="button" value="Verificar" onclick="verificar()"></p>
         <div>
-            <img src="../imgs/bebe.jpg" style="border-radius: 50%" width="300" height="300" alt="Foto do dia" id="img">
+            <p>Ano de nascimento: <input type="number" name="nascimento" min="0" id="anoNasc"></p>
+            <p> Sexo: <label for="masc"><input type="radio" id="masc" name="radsex">Masculino </label>
+                    <label for="fem"><input type="radio" id="fem" name="radsex" checked>Feminino</label>
+            </p>
+            <p><input type="button" value="Verificar" onclick="verificar()"></p>
         </div>
-        <div id="msg">Preencha o formulário para verificar!</div>
+        <div id="res">
+            Preencha o formulário para verificar!
+        </div>
+
         
     </section>
 

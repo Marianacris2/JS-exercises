@@ -19,20 +19,37 @@ function carregar(){
 }
 
 function verificar(){
-    var anoNasc = 2011//window.document.getElementsByName('anoNasc');
-    var fem = window.document.getElementById('fem');
-    var masc = window.document.getElementById('masc');
-    var res = window.document.getElementById('res');
-    var msg = window.document.getElementById('msg');
-     
-    if(anoNasc > 2010){
-        img.src = "../imgs/bebe.jpg"
-        msg.innerHTML = 'Você é criança';
-    }else if(anoNasc > 1980 && anoNasc < 2008){
-        img.src = "../imgs/menina.jpg"
-        msg.innerHTML = 'Você é jovem!';
+    var data = new Date();
+    var ano = data.getFullYear();
+    var fano = document.getElementById('anoNasc');
+    var res = document.querySelector('div#res');
+    var img = document.createElement('img');
+    img.setAttribute('id', 'foto');
+    if(fano.value.length ==0 && fano.value.length >ano){    //verificando os anos 
+        window.alert('Tente novamente!');
     }else{
-        img.src = "../imgs/idosa.jpg"
-        msg.innerHTML = 'Você é Idosa!';
+        var fsex = document.getElementsByName('radsex');
+        var idade = ano - Number(fano.value);
+        var genero = '';
+        if(fsex[0].checked){
+            genero= 'homem';
+            if(idade >=0 && idade< 10){
+                //img.setAttribute('src', '../imgs/bebe.jpg');
+            }else if( idade <21){
+                //img.setAttribute('src', '../imgs/menino.jpg');
+            }else if(idade < 50){
+                //img.setAttribute('src', '../imgs/idoso.jpg');
+            }   
+        }else{
+            genero = 'mulher';
+            if(idade >=0 && idade< 10){
+              //  img.setAttribute('src', '../imgs/bebe.jpg');
+            }else if( idade <21){
+                //img.setAttribute('src', '../imgs/meina.jpg');
+            }else if(idade < 50){
+                //img.setAttribute('src', '../imgs/idosa.jpg');
+            }
+        }
+        res.innerHTML = `Detectamos uma pessoa de ${idade} anos e ${genero}`;
     }
 }
