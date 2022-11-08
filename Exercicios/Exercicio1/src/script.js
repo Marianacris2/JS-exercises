@@ -66,3 +66,15 @@ function contar(){
 
     }
 }
+
+function tabuar(){
+    var numero = document.getElementById('o');
+    numero = numero.value;
+    var mult;
+    var res = document.getElementById('res');
+    res.innerHTML = '';
+    for(var i=0; i<=10; i++){
+        mult = numero * i;
+        res.innerHTML += `${numero} x ${i} = ${mult}</br>`;
+    }
+}
