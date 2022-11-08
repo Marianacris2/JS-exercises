@@ -60,9 +60,9 @@ function contar(){
     var passo = document.getElementById('passe');
     var res = document.getElementById('res');
     res.innerHTML = '';
-    //document.write('chegou aqui');
+
     for(var i = Number(inicio.value); i< Number(fim.value); i+=Number(passo.value)){
         res.innerHTML += `${i} - `;
-        //document.write(i);
+
     }
 }
