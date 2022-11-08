@@ -31,3 +31,7 @@ footer{
 img{
     margin-top: 15px;
 }
+
+div#contador{
+    text-align: right;
+}

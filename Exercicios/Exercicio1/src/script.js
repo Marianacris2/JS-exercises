@@ -53,3 +53,16 @@ function verificar(){
         res.innerHTML = `Detectamos uma pessoa de ${idade} anos e ${genero}`;
     }
 }
+
+function contar(){
+    var inicio = document.getElementById('start');
+    var fim = document.getElementById('end');
+    var passo = document.getElementById('passe');
+    var res = document.getElementById('res');
+    res.innerHTML = '';
+    //document.write('chegou aqui');
+    for(var i = Number(inicio.value); i< Number(fim.value); i+=Number(passo.value)){
+        res.innerHTML += `${i} - `;
+        //document.write(i);
+    }
+}
